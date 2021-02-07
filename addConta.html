@@ -3,12 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="STATIC/CSS/reset.css">
     <link rel="stylesheet" href="STATIC/CSS/style.css">
     <script src="STATIC/JS/pessoal.js"></script>
     <title>Document</title>
    
 </head>
 <body>
+    <header class="menu">
+        <a href="index.html" class="logo"><img src="STATIC/IMG/pigo2.png"></a>
+        <nav  class="menuLista">
+            <ul>
+                <li><a href="addConta.html">Cadastro</a></li>
+                <li><a href="detalhado.html">Consulta</a></li>
+            </ul>
+        </nav>
+    </header>
     
+    <main class="conteudo">
+      
+        <div class="div">
+            <t1> Registre um novo gasto</t1>
+            <section>
+                <select name="ano" id="ano">
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                </select>
+                <select name="mes" id="mes" >
+                        <option value="" disabled selected>mes</option>
+                        <option value="1">janeiro</option>
+                        <option value="2">fevereiro</option>
+                        <option value="3">março</option>
+                        <option value="4">abril</option>
+                        <option value="5">maio</option>
+                        <option value="6">junho</option>
+                        <option value="7">julho</option>
+                        <option value="8">agosto</option>
+                        <option value="9">setembro</option>
+                        <option value="10">outubro</option>
+                        <option value="11">novembro</option>
+                        <option value="12">dezembro</option>
+                </select>
+                <input type="text" name="dia" id="dia" placeholder="Dia">
+                <select name="tipo" id="tipo">
+                    <option value="" disabled selected>tipo de despesa</option>
+                    <option value="alimento">alimentação</option>
+                    <option value="mercado">mercado</option>
+                    <option value="compras">compras</option>
+                </select>
+            </section>
+        </div>
+    </main>
 </body>
 </html>
+
