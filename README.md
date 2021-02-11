@@ -1,6 +1,6 @@
 # Financas-pessoais-v1
 ### APP for studies and necessity
-it begin with a necessity for main the  tack of finacal balance. in times of economical retreat, countion is the best mothod
+it begin with a necessity for main the  tack of finacal balance. in times of economical retreat, caution is the best method
 
 ![Pagina, de cadastro](https://github.com/OuroborosD/Financas-pessoais-v1/blob/main/STATIC/IMG/imgreadme.PNG)
 

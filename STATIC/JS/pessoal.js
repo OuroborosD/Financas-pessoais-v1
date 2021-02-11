@@ -12,19 +12,40 @@ class Despesas{
         this.valor = valor
         
     }
+    verificardados(){// verificar dados
+        for (let i in this){
+           console.log(i, this[i])// parcorre cada elemento no objeto
+                                  // o this[i], é a mesma coisa que
+                                  //this.ano , this.mes etc  
+            if(this[i] == undefined || this[i] == null ||this[i] == ''){// caso seja uma destas coisas
+                return false // no como ele retorna false
+            }else{
+                return true
+            }
+        }
+    }
 }
 
 class Indice{
     constructor(atual){
-        this.atual = 0
+        this.atual = localStorage.getItem('id')
+        if(localStorage.getItem('id') == null){
+            localStorage.setItem('id', 0)
+            this.atual = localStorage.getItem('id')
+        }
     }
     add(){
-        this.atual +=1
+        this.atual = parseInt(localStorage.getItem('id')) +1
+        
+        
+        localStorage.setItem('id', this.atual)
     }
     
 }
 
 let index = new Indice()
+
+
 
 
 function cadastrar(){
@@ -35,34 +56,32 @@ function cadastrar(){
     let dia = document.getElementById('dia').value
     let tipo = document.getElementById('tipo').value
     let despesa = new Despesas(descricao,valor,ano,mes,dia,tipo)
-    
-
-    if(descricao.length ==0 || valor.length == 0|| dia.length == 0 || mes.length == 0){
-        alert('algum campo está vazio')
+    if(despesa.verificardados()){// caso de false  na função aqui pula diret para o else
+        gravar(despesa)
     }else{
-        gravar(despesa)// função para gravar os dados no banco de dados
+        alert('falta o preencimento de algum campo')
     }
-    
 
 }
 
 
 function gravar(despesaParamatro){// g é o parametro
-        console.log('antes do if',index.atual)
+        let index = new Indice()
+        
         if(localStorage.getItem(index.atual) !== null) {
+            
             index.atual = localStorage.getItem('id')
-            console.log('dentro do if',index.atual)
         }
-        console.log('depois do if',index.atual)
-
+        
         localStorage.setItem(index.atual, JSON.stringify(despesaParamatro))//esse metodo é usado para tranformar 
                                             // a classe em JSON, podendo assim, mandar
                                             // objetos completos em vez de só um item
                                             // despesa é a key do objeto
                                             //despesaPametro é o objeto
         index.add()
+      
         localStorage.setItem('id', index.atual)
-        console.log('final ',index.atual)
+        
         //document.location.reload();
         
 
