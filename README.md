@@ -2,7 +2,7 @@
 ### APP for studies and necessity
 it begin with a necessity for main the  tack of finacal balance. in times of economical retreat, countion is the best mothod
 
-![Pagina, de cadastro](https://github.com/OuroborosD/cep_consumer/blob/master/STATIC/IMG/imgreadme.PNG)
+![Pagina, de cadastro](https://github.com/OuroborosD/Financas-pessoais-v1/blob/main/STATIC/IMG/imgreadme.PNG)
 
 ## Task LIST
 -[x] criar as paginas HTML
