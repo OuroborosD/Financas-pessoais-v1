@@ -6,12 +6,12 @@ it begin with a necessity for main the  tack of finacal balance. in times of eco
 
 ## Task LIST
 - [x] criar as paginas HTML
-- [] deixar responsivo
+- [ ] deixar responsivo
 - [x]logica para pegar os dados da pagina
 - [x]criar um localStorage com indixce dinamico
-- [] criar um crud
-- [] criar grafico de receita e despesas
-- [] pagina de relatorio, que gera pdf e exel
+- [ ] criar um crud
+- [ ] criar grafico de receita e despesas
+- [ ] pagina de relatorio, que gera pdf e exel
 
 
   
