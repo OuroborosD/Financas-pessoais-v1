@@ -4,14 +4,15 @@ it begin with a necessity for main the  tack of finacal balance. in times of eco
 
 ![Pagina, de cadastro](https://github.com/OuroborosD/Financas-pessoais-v1/blob/main/STATIC/IMG/imgreadme.PNG)
 
-## Task LIST
-- [x] criar as paginas HTML
-- [ ] deixar responsivo
-- [x] logica para pegar os dados da pagina
-- [x] criar um localStorage com indixce dinamico
-- [ ] criar um crud
-- [ ] criar grafico de receita e despesas
-- [ ] pagina de relatorio, que gera pdf e exel
+## Task List
+- [x] Create the HTML pages
+- [x] Integrate JS with the HTML pages
+- [ ] Make the site responsive
+- [x] Make the data be keep in LOCALSTORA
+- [ ] Create a CRUD
+- [ ] Create Grafics for ins  and out in cash
+- [ ] Crate a page for report, daily, weekly and monthly
+- [ ] Generates report in pdf and excel. 
 
 
   
