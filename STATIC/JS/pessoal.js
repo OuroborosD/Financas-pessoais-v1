@@ -12,17 +12,18 @@ class Despesas{
         this.valor = valor
         
     }
-    verificardados(){// verificar dados
+    verificadados(){// verificar dados
         for (let i in this){
-           console.log(i, this[i])// parcorre cada elemento no objeto
+           console.log(i, this[i])// percorre cada elemento no objeto
                                   // o this[i], é a mesma coisa que
                                   //this.ano , this.mes etc  
             if(this[i] == undefined || this[i] == null ||this[i] == ''){// caso seja uma destas coisas
-                return false // no como ele retorna false
-            }else{
-                return true
-            }
-        }
+               
+                 return false // no como ele retorna false
+                }
+            
+            }// termino do for, caso ele complete tudo, retorna true
+            return true //caso não tenha erros
     }
 }
 
@@ -56,7 +57,8 @@ function cadastrar(){
     let dia = document.getElementById('dia').value
     let tipo = document.getElementById('tipo').value
     let despesa = new Despesas(descricao,valor,ano,mes,dia,tipo)
-    if(despesa.verificardados()){// caso de false  na função aqui pula diret para o else
+    console.log(despesa)
+    if(despesa.verificadados()){// caso de false  na função aqui pula diret para o else
         gravar(despesa)
     }else{
         alert('falta o preencimento de algum campo')
