@@ -60,8 +60,9 @@ function cadastrar(){
     console.log(despesa)
     if(despesa.verificadados()){// caso de false  na função aqui pula diret para o else
         gravar(despesa)
+        alert('Despesa gravada!')
     }else{
-        alert('falta o preencimento de algum campo')
+        alert('falta o preencimento de algum campo!')
     }
 
 }
@@ -84,7 +85,17 @@ function gravar(despesaParamatro){// g é o parametro
       
         localStorage.setItem('id', index.atual)
         
-        //document.location.reload();
-        
+        document.location.reload();
+}
 
+function mostrarmenu(){
+    let exibir = document.getElementById('lst')
+    console.log(exibir)
+   
+    exibir.style.display == "none"
+    exibir.style.color = 'pink'
+    console.log(exibir.style.color)
+    if(exibir.style.display == "none"){
+        exibir.style.display = 'flex'
+    }
 }

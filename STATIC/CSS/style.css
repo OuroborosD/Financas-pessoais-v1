@@ -34,6 +34,10 @@ a{
     text-decoration: none;
 }
 
+.ham{
+    display: none;
+}
+
 /*=========================MAIN=================================*/
 .conteudo{
     padding-left: 10%;
@@ -93,10 +97,38 @@ section{
 }
 
 @media (max-width:600px)
-{
+{   
+
+    .menu{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0px;
+    }    
+    .logomenu{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .ham{
+        display:flex;
+        font-size: 60px;
+        align-items: center;
+    }
+
+    
+    
     .div{
+        
         width: 100%;
     }
+    
+
+    #lst{
+        display: none;
+        flex-direction: column;
+    }
+
     .conteudo{
         padding-left: 0%;
     }

@@ -11,18 +11,22 @@
 </head>
 <body>
     <header class="menu">
-        <a href="index.html" class="logo"><img src="STATIC/IMG/pigo2.png"></a>
+        <div class="logomenu">
+            <a class="img"  href="index.html" class="logo"><img src="STATIC/IMG/pigo2.png"></a>
+            <a class="ham" ref="javascript:void(0);"  onclick="mostrarmenu()">&#9776;</a>
+        </div>
         <nav  class="menuLista">
-            <ul>
-                <li><a href="addConta.html">Cadastro</a></li>
-                <li><a href="lista.html">Lista</a></li>
-                <li><a href="detalhado.html">relatorios</a></li>
-            </ul>
+            <div id="lst">
+                <a href="addConta.html">Cadastro</a>
+                <a href="lista.html">Lista</a>
+                <a href="detalhado.html">relatorios</a>
+            </div>
         </nav>
+        
     </header>
     
     <main class="conteudo">
-      
+      <a></a>
         <div class="div">
             <t1> Registre um novo gasto</t1>
             <section>
