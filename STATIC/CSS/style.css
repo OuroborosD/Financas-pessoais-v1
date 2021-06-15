@@ -20,21 +20,24 @@ html,body{
     justify-content: space-between;
   
 }
-.sub-menu{
+.sub-menu-op,.sub-menu-cadastro{
     display: flex;
     align-items: center;
     
 }
 
-a{
+a,p{
+    color: #FFD700;
     text-decoration: none;
     font-size: 24px ;
     font-weight: bold;
-    padding: 0px 12px;
+    padding: 0px 24px;
 }
 
-li{
-    color: #FFD700;
+a:hover{
+    color: #0AB3F7;
+    padding: 38px 18px;
+    background:#FFD700 ;
 }
 
 main{
@@ -49,3 +52,42 @@ footer{
     justify-content: center;
 }
 
+
+
+@media (max-width: 900px){
+    a,p{
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 750px){
+    img{
+        width: 100px;
+        align-self: center;
+    }
+   
+    .menu{
+
+        flex-direction: column;
+    }
+    .menu-nomes{
+        height: 100%;
+        background: #0AB3F7;
+        flex-direction: column;
+    }
+    .sub-menu-op, .sub-menu-cadastro{
+        justify-content: space-between;
+    }
+
+    a,p{
+        font-size: 14px;
+        padding: 10px 5px;
+    }
+
+    a:hover{
+        color: #0AB3F7;
+        padding: 10px 5px;
+        background:#FFD700 ;
+    }
+}
