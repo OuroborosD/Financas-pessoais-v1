@@ -92,7 +92,7 @@ function mostrarmenu(){
     let exibir = document.getElementById('lst')
     console.log(exibir)
    
-    exibir.style.display == "none"
+    exibir.style.display = "none"
     exibir.style.color = 'pink'
     console.log(exibir.style.color)
     if(exibir.style.display == "none"){
