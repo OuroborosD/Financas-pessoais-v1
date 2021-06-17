@@ -1,9 +1,10 @@
-html,body{
+html,body{/*tem o html e o corpo, para expandir e para o footer ficar sempre em baixo*/
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-family: Arial;
+   
 }
 .menu{
     
@@ -35,7 +36,7 @@ html,body{
     padding: 0px 24px;
 }
 
-.teste:hover{
+.am:hover{
     color: #0AB3F7;
     padding: 38px 18px;
     background:#FFD700 ;
@@ -43,7 +44,6 @@ html,body{
 
 main{
     height: 100%;
-    border: 3px solid green;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,35 +53,6 @@ main{
 
 
 
-main > div{
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
-    width: 40%;
-    height: 10%;
-    border: 3px solid  #0AB3F7;
-    border-radius: 20px;
-    margin: 15px 0px;
-
-}
-
-
-button{
-    margin-top: 50px;
-    width: 30%;
-    background: #0AB3F7;
-    border: none;
-    padding: 22px;
-    border-radius: 50px;
-    text-transform: capitalize;  
-}
-
-.receitas{
-    color: green;
-}
-.contas{
-    color:red;
-}
 
 
 footer{

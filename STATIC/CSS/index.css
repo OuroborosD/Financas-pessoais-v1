@@ -1,0 +1,29 @@
+.index > div{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    width: 40%;
+    height: 10%;
+    border: 3px solid  #0AB3F7;
+    border-radius: 20px;
+    margin: 15px 0px;
+
+}
+
+
+button{
+    margin-top: 50px;
+    width: 30%;
+    background: #0AB3F7;
+    border: none;
+    padding: 22px;
+    border-radius: 50px;
+    text-transform: capitalize;  
+}
+
+.receitas{
+    color: green;
+}
+.contas{
+    color:red;
+}

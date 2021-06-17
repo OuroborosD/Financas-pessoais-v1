@@ -1,0 +1,8 @@
+.despesas{
+    display: flex;
+    flex-direction: column;
+}
+
+legend{
+    text-transform: capitalize;
+}
