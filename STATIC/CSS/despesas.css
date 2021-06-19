@@ -1,8 +1,71 @@
 .despesas{
+   
     display: flex;
     flex-direction: column;
 }
 
 legend{
     text-transform: capitalize;
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 16px ;
+    font-weight: bold;
+}
+
+section{
+    width: 70%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
+   
+}
+
+.conjunto{
+    flex-grow: 1;
+    margin: 2%;
+}
+
+legend{
+    align-items: flex-start;
+}
+
+input,select, textarea{
+    width: 100%;
+    border: 3px solid  #0AB3F7;
+    border-radius: 20px;
+    margin: 8px 0px;
+}
+
+input, select{
+    
+    height: 50px;
+    
+}
+
+
+
+option{
+    align-items: center;
+}
+textarea{
+    height: 70%;
+}
+
+
+button{
+    align-self: center;
+    margin-top: 40px;
+    width: 25%;
+    background: #0AB3F7;
+    border: none;
+    padding: 22px;
+    border-radius: 50px;
+    text-transform: capitalize;  
 }

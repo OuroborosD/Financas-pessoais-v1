@@ -27,11 +27,50 @@
     <main class="despesas">
         <section>
             <form>
-                <legend>nome da despesa</legend>
-                    <input type="text"  id="nome" placeholder="Nome">
+                <div class="conjunto">
+                    <legend>nome da despesa</legend>
+                    <input type="text"  id="nome" placeholder=" Nome">
                     
+                </div>
+                <div class="conjunto">
+                    <legend>categoria</legend>
+                        <select name="select">
+                            <option value="0" selected disabled>selecione o tipo da compra</option>
+                            <option value="1">alimentação</option>
+                            <option value="2">compras online</option>
+                            <option value="3">feira</option>
+                    </select>
+                </div>
+                <div class="conjunto">
+                    <legend>descrição</legend>
+                    <textarea name="descricao" id="descricao" cols="26" rows="6"></textarea>
+                </div>
             </form>
-           
+            <form>
+               
+            </form>
+            <form>
+                
+                <div class="conjunto">
+                    <legend>data</legend>
+                    <input type="date"  id="data" placeholder="data">
+                </div>
+                <div class="conjunto">
+                    <legend>meio de pagamento</legend>
+                        <select name="meio-pagamento">
+                            <option value="0" selected disabled>selecione o tipo da compra</option>
+                            <option value="1">cartão</option>
+                            <option value="2">dinheiro</option>
+                            <option value="3">boleto</option>
+                    </select>
+                </div>
+                <div class="conjunto">
+                    <legend>valor</legend>
+                    <input type="number"  id="valor" placeholder=" R$:">
+                    
+                </div>
+            </form>
+            <button>salvar</button>
 
         </section>
     </main>
