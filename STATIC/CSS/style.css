@@ -10,7 +10,7 @@ html,body{/*tem o html e o corpo, para expandir e para o footer ficar sempre em 
     
     display: flex;
     background: #0AB3F7;
-    height: 100px;
+    
     text-transform: capitalize;  
     
 }
@@ -77,13 +77,20 @@ footer{
         width: 100px;
         align-self: center;
     }
+
+       /**/
+    a{/*vai alinhar a imagem ao centro , pois 
+        a IMG é filho dela.*/
+        align-self: center;
+    }
+   
    
     .menu{
-
+        
         flex-direction: column;
     }
     .menu-nomes{
-        height: 100%;
+        
         background: #0AB3F7;
         flex-direction: column;
     }
@@ -96,9 +103,11 @@ footer{
         padding: 10px 5px;
     }
 
-    a:hover{
-        color: #0AB3F7;
-        padding: 10px 5px;
-        background:#FFD700 ;
+    .am:hover{
+        color: #0F00B3;
+        padding: 2px;
+        
+        border-radius: 20px;
+        
     }
 }
