@@ -1,5 +1,7 @@
 .despesas{
-    
+    border: 5px solid red;
+    width: 90%;
+    margin: 5% auto;
     display: flex;
     flex-direction: column;
 }
@@ -13,16 +15,18 @@ legend{
 }
 
 section{
-    width: 70%;
+    border: 2px solid pink;
+    width: 80%;
     align-self: center;
     display: flex;
     flex-direction: column;
     
 }
 form{
+    border: 2px solid green;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    
    
    
 }
@@ -30,6 +34,7 @@ form{
 .conjunto{
     flex-grow: 1;
     margin: 2%;
+    
 }
 
 legend{
@@ -37,6 +42,7 @@ legend{
 }
 
 input,select, textarea{
+    
     width: 100%;
     border: 3px solid  #0AB3F7;
     border-radius: 20px;
@@ -89,7 +95,7 @@ button{
     }
     .despesas{
         margin: 20% auto;
-        border: 4px red solid;
+        
         align-self: center;
     }
 
