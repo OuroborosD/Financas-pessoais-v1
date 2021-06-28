@@ -1,5 +1,4 @@
 .despesas{
-    border: 5px solid red;
     width: 90%;
     margin: 5% auto;
     display: flex;
@@ -15,7 +14,6 @@ legend{
 }
 
 section{
-    border: 2px solid pink;
     width: 80%;
     align-self: center;
     display: flex;
@@ -23,17 +21,14 @@ section{
     
 }
 form{
-    border: 2px solid green;
     display: flex;
     flex-wrap: wrap;
     
-   
-   
 }
 
 .conjunto{
     flex-grow: 1;
-    margin: 2%;
+    margin: 1%;
     
 }
 
@@ -82,11 +77,11 @@ button{
     margin-top: 40px;
     width: 30%;
     background: #0AB3F7;
-    border: none;
     padding: 22px;
     border-radius: 50px;
     text-transform: capitalize;  
 }
+
 
 
 @media (max-width: 750px){
@@ -95,7 +90,6 @@ button{
     }
     .despesas{
         margin: 20% auto;
-        
         align-self: center;
     }
 

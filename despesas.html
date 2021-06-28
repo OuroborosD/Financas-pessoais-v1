@@ -34,7 +34,7 @@
                 </div>
                 <div class="conjunto" id="teste">
                     <legend>categoria</legend>
-                        <select name="select">
+                    <select id="categoria">
                             <option value="0" selected disabled>selecione o tipo da compra</option>
                             <option value="1">alimentação</option>
                             <option value="2">compras online</option>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="conjunto">
                     <legend>meio de pagamento</legend>
-                        <select name="meio-pagamento">
+                        <select id="meio-pagamento">
                             <option value="0" selected disabled>selecione o tipo da compra</option>
                             <option value="1">cartão</option>
                             <option value="2">dinheiro</option>
@@ -70,12 +70,13 @@
                     
                 </div>
             </form>
-            <button>salvar</button>
+            <button onclick="exe()" >salvar</button>
 
         </section>
     </main>
     <footer>
         <p>Oroboros 2021</p>
     </footer>
+    <script src="/STATIC/JS/coisas.js"></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="language" onchange="a()">
+        <option value="pt" selected>Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+    </select>
+    <script>
+        	function a(){
+                var select = document.getElementById('language');
+                var value = select.options[select.selectedIndex].value;
+                console.log(value); // pt
+            }
+    </script>
+</body>
+</html>
