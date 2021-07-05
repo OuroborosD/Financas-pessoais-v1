@@ -79,7 +79,7 @@ footer{
     }
 
        /**/
-    a{/*vai alinhar a imagem ao centro , pois 
+    .moldura{/*vai alinhar a imagem ao centro , pois 
         a IMG é filho dela.*/
         align-self: center;
     }

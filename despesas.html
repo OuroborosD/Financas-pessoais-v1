@@ -11,7 +11,7 @@
 </head>
 <body>
     <header class="menu">
-        <a href='index.html'><img src="STATIC\IMG\newpigo.png" height="100px"></a>
+        <a class="moldura" href='index.html'><img src="STATIC\IMG\newpigo.png" height="100px"></a>
         <nav class="menu-nomes">
             <ul class="sub-menu-op">
                 <a class="am" href="despesas.html"  ><li>despesas</li></a>
@@ -27,12 +27,16 @@
     <main class="despesas" >
         <section>
             <form>
-                <div class="conjunto">
+                <div class="nome">
                     <legend>nome da despesa</legend>
                     <input type="text"  id="nome" placeholder=" Nome">
                     
                 </div>
-                <div class="conjunto" id="teste">
+                <div class="data">
+                    <legend>data</legend>
+                    <input type="date"  id="data" placeholder="data">
+                </div>
+                <div class="categoria" id="teste">
                     <legend>categoria</legend>
                     <select id="categoria">
                             <option value="0" selected disabled>selecione o tipo da compra</option>
@@ -41,21 +45,7 @@
                             <option value="3">feira</option>
                     </select>
                 </div>
-                <div class="conjunto">
-                    <legend>descrição</legend>
-                    <textarea name="descricao" id="descricao" cols="26" rows="6"></textarea>
-                </div>
-            </form>
-            <form>
-               
-            </form>
-            <form>
-                
-                <div class="conjunto">
-                    <legend>data</legend>
-                    <input type="date"  id="data" placeholder="data">
-                </div>
-                <div class="conjunto">
+                <div class="meio-pagamento">
                     <legend>meio de pagamento</legend>
                         <select id="meio-pagamento">
                             <option value="0" selected disabled>selecione o tipo da compra</option>
@@ -64,13 +54,22 @@
                             <option value="3">boleto</option>
                     </select>
                 </div>
+                
+            </form>
+            
+            <form>
                 <div class="conjunto">
+                    <legend>descrição</legend>
+                    <input type="text" name="descricaoo" id="descricao">
+                </div> 
+                
+                <div class="valor">
                     <legend>valor</legend>
                     <input type="number"  id="valor" placeholder=" R$:">
                     
                 </div>
             </form>
-            <button onclick="exe()" >salvar</button>
+            <button class="botao" onclick="exe()" >salvar</button>
 
         </section>
     </main>
