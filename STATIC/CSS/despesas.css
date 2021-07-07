@@ -101,10 +101,19 @@ button{
     padding: 22px;
     border-radius: 50px;
     text-transform: capitalize;  
+    border: none;
 }
 
-.botao:target{
-    color: red;
+input:focus, select:focus {
+    
+    border: 3px solid #FFD700 ;
+    outline: 0; 
+} 
+
+
+
+::placeholder{
+    color: #0AB3F7;
 }
 
 @media (max-width: 750px){

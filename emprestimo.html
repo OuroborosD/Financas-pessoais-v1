@@ -24,54 +24,47 @@
                 <a class="am" href=""><li>cadastro</li></a>
             </ul >
         </nav>        
-    </header>       
     </header>
     <main class="despesas" >
         <section>
-            <form>
+            <form autocomplete="off" >
                 <div class="nome">
-                    <legend>nome da despesa</legend>
-                    <input type="text"  id="nome" placeholder=" Nome">
+                    <legend>para quem?</legend>
+                    <input class="nome-input" type="text"  id="nome" placeholder=" Pessoa">
                     
                 </div>
                 <div class="data">
                     <legend>data</legend>
                     <input type="date"  id="data" placeholder="data">
                 </div>
-                <div class="categoria" id="teste">
-                    <legend>categoria</legend>
-                    <select id="categoria">
-                            <option value="0" selected disabled>selecione o tipo da compra</option>
-                            <option value="1">alimentação</option>
-                            <option value="2">compras online</option>
-                            <option value="3">feira</option>
-                    </select>
-                </div>
                 <div class="meio-pagamento">
                     <legend>meio de pagamento</legend>
                         <select id="meio-pagamento">
-                            <option value="0" selected disabled>selecione o tipo da compra</option>
+                            <option value="0" selected disabled >como emprestou</option>
                             <option value="1">cartão</option>
                             <option value="2">dinheiro</option>
-                            <option value="3">boleto</option>
+                            <option value="3">emprestimo bancario</option>
                     </select>
                 </div>
+               
                 
             </form>
             
-            <form>
+            <form autocomplete="off" >
                 <div class="conjunto">
                     <legend>descrição</legend>
-                    <input type="text" name="descricaoo" id="descricao">
+                    <input type="text" name="descricao" id="descricao">
                 </div> 
-                
+                <div class="data">
+                    <legend>data para receber</legend>
+                    <input type="date"  id="data-receber" placeholder="data">
+                </div>
                 <div class="valor">
                     <legend>valor</legend>
                     <input type="number"  id="valor" placeholder=" R$:">
-                    
                 </div>
             </form>
-            <button  id="botao" onclick="addDespesa()" >salvar</button>
+            <button  id="botao" onclick="addEmprestimo()" >salvar</button>
 
         </section>
     </main>
