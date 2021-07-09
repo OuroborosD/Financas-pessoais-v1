@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="STATIC\CSS\reset.css">
     <link rel="stylesheet" href="STATIC\CSS\style.css">
-    <link rel="stylesheet" href="STATIC/CSS/despesas.css">
+    <link rel="stylesheet" href="STATIC/CSS/lista.css">
     <title>Pigo</title>
 </head>
-<body>
+<body onload="lista()">
     <header class="menu">
         <a class="moldura" href='index.html'><img src="STATIC\IMG\newpigo.png" height="100px"></a>
         <nav class="menu-nomes">
@@ -26,14 +26,31 @@
         </nav>        
     </header>
     <main>
-        <div>
-
-        </div>
-        <button onclick="lista()" >mostrar</button>
+        
+        <table class="table" >
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Data</th>
+                <th>Meio de pagamento</th>
+                <th>Data Receber</th>
+                <th>valor</th>
+              </tr>
+            </thead>
+ 
+ 
+            <tbody id="listaCoisas">
+            <!-- corpo da tabela será gerada aqui dentro. -->
+            </tbody>
+          </table>
+        
     </main>
     <footer>
         <p>Oroboros 2021</p>
     </footer>
-    <script src="/STATIC/JS/script.js"></script>
+    <script   src="/STATIC/JS/ultil.js"></script>
+    <script  src="/STATIC/JS/script.js"></script>
+    
 </body>
 </html>

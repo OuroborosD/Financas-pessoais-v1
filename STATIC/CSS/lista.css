@@ -1,0 +1,21 @@
+main{
+    width: 80%;
+    align-items: center;
+}
+
+
+th, td{
+    padding: 8px;
+    border: 1.5px solid #FFD700;
+    text-transform: capitalize;   
+    color: #0AB3F7;
+}
+
+th{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+td{
+    font-size: 18px;
+}
