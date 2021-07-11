@@ -22,10 +22,6 @@ console.log(`${emp1.data}  , ${emp1.valor} ${emp1.duplicar()}`)
 let dada = ["05/03/1996",true]
 console.log(dada[1])
 
-import {
-    formatarData
-}
-from "./teste2"
 
 
 let oi = formatarData('2021-07-05')

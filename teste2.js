@@ -1,20 +1,21 @@
 let a = 234
-console.log(a.toString().length)
+//console.log(a.toString().length)
 
-// pegar um JSON e transformar em array.
-let json = '{"nome":"diego","idade":25}'
-// coverta o objeto JSON com o parce
-let bruto = JSON.parse(json);
+function converteJsonToString(){
+    // pegar um JSON e transformar em array.
+    let json = '{"nome":"diego","idade":25}'
+    // coverta o objeto JSON com o parce
+    let bruto = JSON.parse(json);
 
-var res = []
-for(var i in bruto){
-    res.push(bruto[i]);
+    var res = []
+    for(var i in bruto){
+        res.push(bruto[i]);
+}
+    console.log(res)
 }
 
 
-
-
-export function formatarData(data) {
+function formatarData(data) {
     
     let dia = ""
     let mes = ""
@@ -35,9 +36,6 @@ export function formatarData(data) {
     return `${dia}/${mes}/${ano}`
 }
 
- let oi = formatarData('2021-07-05')
- console.log(oi)
+ //let oi = formatarData('2021-07-05')
+converteJsonToString()
 
-
-
-        
