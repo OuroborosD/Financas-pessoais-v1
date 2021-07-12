@@ -24,5 +24,18 @@ console.log(dada[1])
 
 
 
-let oi = formatarData('2021-07-05')
-console.log(oi)
+//let oi = formatarData('2021-07-05')
+//console.log(oi)
+
+let dataInt = '2021----07-05'
+let testes = 0
+for(let i = 0; i <5 ;i++){
+    dataInt = dataInt.replace("-","")
+
+}
+console.log(dataInt)
+
+let datateste = 202120
+datateste = toString(datateste)
+
+

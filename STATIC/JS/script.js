@@ -81,7 +81,7 @@ function filtro(){
     console.log(tr)
     
     //
-    listar(tipo[filtro]);
+    listarV2(tipo[filtro]);
     }
     
     
