@@ -109,7 +109,9 @@ function ordenarv2(lista){
             return (lista){LIST} --> lista com os valores já ordenados
     */
             let tamanho = lista.length
-            console.log('tamanho da lista',lista)
+            console.log('tamanho da lista',lista
+            
+            )
             
             for(let i = 1 ;i < tamanho; i++){
                 let valor = lista[i]//passa o objeto para a variavel.
