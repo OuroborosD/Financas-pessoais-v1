@@ -1,3 +1,24 @@
+
+function limparTabela(){
+    try{
+        while(true){
+             let corpoTabela = document.getElementById("listaCoisas").deleteRow(0)
+         }
+     }
+     catch(e){
+         let filtro = document.querySelector('input[name="filtro"]:checked').value
+     
+}}
+
+
+function nullUndefined(parametro){
+    if(parametro == null ||  parametro == undefined){
+        return '-'.repeat(5)
+    }else{
+        return parametro
+    }
+}
+
 function formatarData(data) {
     /*formata a data de 2021/06/07 para 07/06/2021
 
@@ -12,6 +33,9 @@ function formatarData(data) {
        return (id){string} --> retorna  o index.
 
     */
+   if(data == undefined){
+       return undefined
+   }
     let dia = ""
     let mes = ""
     let ano = ""
@@ -241,11 +265,29 @@ function listarV2(tipo){
     let listaordenada = []
     let listaProvisoria = []
     if(tipo == 'todos'){
-        //chamei a função nela mesma, para gerar os dois tipos
-        listar('emprestimo')
-        listar('despesa')
         
-    }
+        let aux1 = []
+        let aux2 = []
+        let index = 0
+        //chamei a função nela mesma, para gerar os dois tipos
+        index = indexDb('emprestimo',false)
+        aux1 = listarV2('emprestimo')
+
+        for(let i = 0; i <= index ; i++){
+            listaordenada.push(aux1[i])
+            }  
+    
+        index = indexDb('emprestimo',false)  
+        aux2 = listarV2('despesa')
+        console.log(`------------------------ ${aux2}`)
+        for(let i = 0; i <= index ; i++){
+            listaordenada.push(aux2[i])
+            }
+        console.log(`------------------------ ${ordenarv2(listaordenada)}`)
+        gerarTabela(ordenarv2(listaordenada))
+        
+        }
+    
     
     let index = indexDb(tipo,false)  
     //console.log(`valor do index ${index}`)
@@ -264,8 +306,74 @@ function listarV2(tipo){
             listaordenada = ordenarv2(listaProvisoria)//pega a lista já ordenada
             console.log('lista oficial valor',listaordenada)
             gerarTabela(tipo,listaordenada)
+            return listaordenada
             
        
+    }
+
+function listarV3(tipo){
+    /*Description:pegar os dados do LOCALSTORAGE, transformar em objeto novamente, e colocar eles dentro de uma lista
+                    para poder ordenar eles
+
+        mudanças V3 - não vai gerar a tabela dentro da função, isso fica por fora.
+
+        parametros ----------------------
+                (tipo){Strig} --> qual parte vai pegar os dados
+    
+        variaveis ----------------------
+            (index){string} --> o caminho de onde é
+    
+        retorno ------------------------
+            return (){} --> 
+    */
+    let listaordenada = []
+    let listaProvisoria = []
+    if(tipo == 'todos'){
+        
+        let aux1 = []
+        let aux2 = []
+        let index = 0
+        //chamei a função nela mesma, para gerar os dois tipos
+        index = indexDb('emprestimo',false)
+        aux1 = listarV3('emprestimo')
+
+        for(let i = 0; i <= index ; i++){
+            if(aux1[i] != null || aux1[i] != undefined){
+                listaProvisoria.push(aux1[i])
+            }}
+         
+    
+        index = indexDb('emprestimo',false)  
+        aux2 = listarV3('despesa')
+        console.log(`------------------------ ${aux2}`)
+        for(let i = 0; i < index ; i++){
+            if(aux2[i] != null || aux2[i] != undefined){
+                listaProvisoria.push(aux2[i])
+            }
+         
+            }
+        console.log(`------------------------ ${JSON.stringify(listaProvisoria)}`)
+        listaordenada = ordenarv2(listaProvisoria)
+       
+    }else{
+        let index = indexDb(tipo,false)  
+        //console.log(`valor do index ${index}`)
+        for(let i = 0; i <= index; i++ ){
+                //console.log(`${i}-${tipo}`,localStorage.getItem(`${i}-${tipo}`))
+                let bruto = localStorage.getItem(`${i}-${tipo}`)
+
+                if(bruto == null){
+                    continue
+                
+                }else{
+                let dado = JSON.parse(bruto)
+                listaProvisoria.push(dado)
+                } }
+
+                listaordenada = ordenarv2(listaProvisoria)//pega a lista já ordenada
+                console.log('lista oficial valor',listaordenada)
+            }
+    return listaordenada
     }
 
 function gerarTabela(tipo,lista){
@@ -288,6 +396,7 @@ function gerarTabela(tipo,lista){
             linha.insertCell(3).innerHTML = tipoPagamento(dado.meioPagamentoRes,1)
             linha.insertCell(4).innerHTML = formatarData(dado.dataReceber)
             linha.insertCell(5).innerHTML = dado.valor
+            linha.setAttribute('class','emprestimo')
         }
         if(tipo == 'despesa'){
             linha.insertCell(0).innerHTML = dado.nome
@@ -296,9 +405,74 @@ function gerarTabela(tipo,lista){
             linha.insertCell(3).innerHTML = tipoPagamento(dado.meioPagamentoRes,2)
             linha.insertCell(4).innerHTML = "----------------------"
             linha.insertCell(5).innerHTML = dado.valor
+            linha.setAttribute('class','despesa')
         }
     }
 }
+
+function gerarTabelaV2(tipo){
+    /*Description:criar a tabela para todos os dados, gerando ------ caso não tenha o campo
+    
+        parametros ----------------------
+             (tipo){string} -->o tipo que é emprestimo, despesa etc. 
+    
+        variaveis ----------------------
+            (){} --> 
+    
+        retorno ------------------------
+            return (){} --> 
+    */
+    let dados = listarV3(tipo)
+    console.log('dados dentro do gerar tabela',dados)
+    let dado = ''
+    console.log('data ------',dados[0].data)
+    let tamanho = dados.length
+    // criar a tr 
+    let recebeTbody = document.getElementById('listaCoisas')
+    
+    // cria a td
+    //linha.insertCell(0).innerHTML = dado.nome
+   for(let i = 0; i < tamanho; i++){
+        let linha = recebeTbody.insertRow()
+        dado = dados[i]
+       console.log(dados[i])
+        if(tipo != "todos"){
+            linha.insertCell(0).innerHTML = nullUndefined(dado.nome)
+            linha.insertCell(1).innerHTML = nullUndefined(tipoPagamento(dado.categoria,3))
+            linha.insertCell(2).innerHTML = nullUndefined(formatarData(dado.data))
+            if(tipo == 'emprestimo'){
+                linha.insertCell(3).innerHTML = nullUndefined(tipoPagamento(dado.meioPagamentoRes,1))
+                linha.setAttribute('class','emprestimo')
+            }else{
+                linha.insertCell(3).innerHTML = nullUndefined(tipoPagamento(dado.meioPagamentoRes,2))
+                linha.setAttribute('class','despesa')
+            }
+            
+            linha.insertCell(4).innerHTML = nullUndefined(formatarData(dado.dataReceber))
+            linha.insertCell(5).innerHTML = nullUndefined(dado.valor)
+       
+
+        }else{
+            
+            linha.insertCell(0).innerHTML = nullUndefined(dado.nome)
+            linha.insertCell(1).innerHTML = nullUndefined(tipoPagamento(dado.categoria,3))
+            linha.insertCell(2).innerHTML = nullUndefined(formatarData(dado.data))
+            if(dado.dataReceber != undefined){
+                linha.insertCell(3).innerHTML = nullUndefined(tipoPagamento(dado.meioPagamentoRes,1))
+                linha.setAttribute('class','emprestimo')
+            }else{
+                linha.insertCell(3).innerHTML = nullUndefined(tipoPagamento(dado.meioPagamentoRes,2))
+                linha.setAttribute('class','despesa')
+            }
+            
+            linha.insertCell(4).innerHTML = nullUndefined(formatarData(dado.dataReceber))
+            linha.insertCell(5).innerHTML = nullUndefined(dado.valor)
+        }
+        
+
+    }
+}
+
 
 
     

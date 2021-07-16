@@ -27,6 +27,7 @@ html,body{/*tem o html e o corpo, para expandir e para o footer ficar sempre em 
     
 }
 
+
 .am, p,button, span{
     text-transform: capitalize;
     color: #FFD700;
@@ -43,6 +44,7 @@ html,body{/*tem o html e o corpo, para expandir e para o footer ficar sempre em 
 }
 
 main{
+    margin: 5% 0%;
     height: 100%;
     display: flex;
     flex-direction: column;

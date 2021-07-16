@@ -63,8 +63,21 @@ function addEmprestimo(){
 }
 
 function lista(){
-   
-    listar(tipo[0])
+     //vai apagar as linhas até dar erro, depois disso vai execultar as coisas da função
+     try{
+        while(true){
+             let corpoTabela = document.getElementById("listaCoisas").deleteRow(0)
+         }
+     }
+     catch(e){
+         let filtro = document.querySelector('input[name="filtro"]:checked').value
+     
+     
+     console.log('valor-------------------------- ',filtro)
+     
+     //
+     gerarTabelaV2(tipo[filtro]);
+     }  
 }
 
 function filtro(){
@@ -81,12 +94,10 @@ function filtro(){
     console.log('valor-------------------------- ',filtro)
     
     //
-    listarV2(tipo[filtro]);
-    }
-    
-    
-    
+    gerarTabelaV2(tipo[filtro]);
+    }    
 }
+
 
 
 

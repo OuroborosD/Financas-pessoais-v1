@@ -6,9 +6,10 @@ main{
 
 th, td{
     padding: 8px;
-    border: 1.5px solid #FFD700;
+    border: 1.5px solid #0AB3F7;
     text-transform: capitalize;   
     color: #0AB3F7;
+    font-weight: 550;
 }
 
 th{
@@ -18,4 +19,11 @@ th{
 
 td{
     font-size: 18px;
+}
+
+.emprestimo{
+    background: #f7ec233d;
+}
+.despesa{
+    background: #f7234d2c;
 }
