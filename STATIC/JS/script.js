@@ -31,7 +31,7 @@ class Emprestimo{
     }}
 
 function addDespesa(){
-    tipo = tipo[0]
+    tipo = tipo[1]
     botaoclick()
     let nome = document.getElementById("nome").value
     let categoria = document.getElementById("categoria")
@@ -47,7 +47,7 @@ function addDespesa(){
 }
 
 function addEmprestimo(){
-    tipo = tipo[1]
+    tipo = tipo[2]
     botaoclick()
     let nome = document.getElementsByClassName('nome-input')[0].value
     let data = document.getElementById('data').value
@@ -77,8 +77,8 @@ function filtro(){
     catch(e){
         let filtro = document.querySelector('input[name="filtro"]:checked').value
     
-    let tr = document.getElementsByTagName('tr')[0].value
-    console.log(tr)
+    
+    console.log('valor-------------------------- ',filtro)
     
     //
     listarV2(tipo[filtro]);

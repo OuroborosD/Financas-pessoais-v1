@@ -15,7 +15,7 @@ function formatarData(data) {
     let dia = ""
     let mes = ""
     let ano = ""
-    for(let i = 0;i < data.length;i++ ){
+    for(let i = 0; i < data.length;i++ ){
 
         // recebe o valor do ano, que são são os primeiros
         if(i < 4){
@@ -43,7 +43,7 @@ function dataToInt(data){
         retorno ------------------------
             return (dataInt){Int} --> data no formato de indeito YYYYMMDD
     */
-   console.log('valor da data dentro: ',data)
+   //console.log('valor da data dentro: ',data)
     let dataInt = data
     let tamanho = dataInt.length
     while(tamanho != 8){//enquanto não estiver com o formato correto de YYYY-MM-DD para YYYYMMDD continua rodando
@@ -53,7 +53,7 @@ function dataToInt(data){
         
 
     dataInt = parseInt(dataInt)
-    console.log(`tipo ${typeof(dataInt)} valor: ${dataInt}`)
+    //console.log(`tipo ${typeof(dataInt)} valor: ${dataInt}`)
     return dataInt
 }
 
@@ -64,7 +64,7 @@ function ordenar(lista){
         Algorithm INSERTION SORT
     
         parametros ----------------------
-             (lista){LIST} -->lista de valores que iram colocados em ordem 
+             (lista){Array} -->lista de valores que iram colocados em ordem 
     
         variaveis ----------------------
             (){} --> 
@@ -109,24 +109,22 @@ function ordenarv2(lista){
             return (lista){LIST} --> lista com os valores já ordenados
     */
             let tamanho = lista.length
-            console.log('tamanho da lista',lista
             
-            )
-            
-            for(let i = 1 ;i < tamanho; i++){
+            for(let i = 1 ; i < tamanho; i++){
                 let valor = lista[i]//passa o objeto para a variavel.
                 let j = i - 1
                 // serve para verificar e o valor de indice anterior é maior que o posterior.
                 // se for maior, ele continua aqui, até qu
-                console.log('valor de dataToInt(lista[j].idade)',lista[j].idade)
-                while(j >= 0 && dataToInt(lista[j].idade) > dataToInt(valor.idade)){
+                console.log('valor de dataToInt(lista[j].idade)',dataToInt(lista[j].data))
+                while(j >= 0 && dataToInt(lista[j].data) > dataToInt(valor.data)){
                     lista[j + 1] = lista[j] //o primeiro valor passa para o segundo valor.
                     j = j - 1 // j = -1, fazendo assim sair do loop
                 }
-                lista[j+ 1] = valor // caso tenha entrado no while, ele retorna na posição anterior.
+                lista[j + 1] = valor // caso tenha entrado no while, ele retorna na posição anterior.
                                     // pois J deve um decremento de - 1 no for e no while, TOTALIZANDO -2
                                     // caso não tenha entrado no while fica na mesma posição. pois tem o decremento de -1
             }
+            console.log('valor da lista ========',lista)
             return lista
         }
 
@@ -240,7 +238,7 @@ function listarV2(tipo){
         retorno ------------------------
             return (){} --> 
     */
-
+    let listaordenada = []
     let listaProvisoria = []
     if(tipo == 'todos'){
         //chamei a função nela mesma, para gerar os dois tipos
@@ -249,10 +247,8 @@ function listarV2(tipo){
         
     }
     
-    let index = indexDb(tipo,false)
-    //elemento tbody
-    
-
+    let index = indexDb(tipo,false)  
+    //console.log(`valor do index ${index}`)
     for(let i = 0; i <= index; i++ ){
             //console.log(`${i}-${tipo}`,localStorage.getItem(`${i}-${tipo}`))
             let bruto = localStorage.getItem(`${i}-${tipo}`)
@@ -262,43 +258,46 @@ function listarV2(tipo){
             
             }else{
             let dado = JSON.parse(bruto)
-            console.log(dado)
-            console.log(dataToInt(dado.data))
             listaProvisoria.push(dado)
-            console.log('\n\n\n lista de nomes :\n',listaProvisoria) 
-            
-            if(index == i){
-                let listaordenada = ordenarv2(listaProvisoria)
-                //gerarTabela(tipo,listaordenada[i])
-            }
             } }
+
+            listaordenada = ordenarv2(listaProvisoria)//pega a lista já ordenada
+            console.log('lista oficial valor',listaordenada)
+            gerarTabela(tipo,listaordenada)
             
        
     }
 
-function gerarTabela(tipo,objeto){
-    let dado = objeto
+function gerarTabela(tipo,lista){
+    let dados = lista
+    let dado = ''
+    console.log('data ------',dados[0].data)
+    let tamanho = lista.length
     // criar a tr 
     let recebeTbody = document.getElementById('listaCoisas')
-    let linha = recebeTbody.insertRow()
+    
     // cria a td
     //linha.insertCell(0).innerHTML = dado.nome
-   if(tipo == 'emprestimo'){
-       linha.insertCell(0).innerHTML = dado.nome
-       linha.insertCell(1).innerHTML = "----------------------"
-       linha.insertCell(2).innerHTML = formatarData(dado.data)
-       linha.insertCell(3).innerHTML = tipoPagamento(dado.meioPagamentoRes,1)
-       linha.insertCell(4).innerHTML = formatarData(dado.dataReceber)
-       linha.insertCell(5).innerHTML = dado.valor
-   }
-   if(tipo == 'despesa'){
-       linha.insertCell(0).innerHTML = dado.nome
-       linha.insertCell(1).innerHTML = tipoPagamento(dado.categoria,3)
-       linha.insertCell(2).innerHTML = formatarData(dado.data)
-       linha.insertCell(3).innerHTML = tipoPagamento(dado.meioPagamentoRes,2)
-       linha.insertCell(4).innerHTML = "----------------------"
-       linha.insertCell(5).innerHTML = dado.valor
-   }
+   for(let i = 0; i < tamanho; i++){
+        let linha = recebeTbody.insertRow()
+        dado = dados[i]
+        if(tipo == 'emprestimo'){
+            linha.insertCell(0).innerHTML = dado.nome
+            linha.insertCell(1).innerHTML = "----------------------"
+            linha.insertCell(2).innerHTML = formatarData(dado.data)
+            linha.insertCell(3).innerHTML = tipoPagamento(dado.meioPagamentoRes,1)
+            linha.insertCell(4).innerHTML = formatarData(dado.dataReceber)
+            linha.insertCell(5).innerHTML = dado.valor
+        }
+        if(tipo == 'despesa'){
+            linha.insertCell(0).innerHTML = dado.nome
+            linha.insertCell(1).innerHTML = tipoPagamento(dado.categoria,3)
+            linha.insertCell(2).innerHTML = formatarData(dado.data)
+            linha.insertCell(3).innerHTML = tipoPagamento(dado.meioPagamentoRes,2)
+            linha.insertCell(4).innerHTML = "----------------------"
+            linha.insertCell(5).innerHTML = dado.valor
+        }
+    }
 }
 
 
