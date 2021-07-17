@@ -24,13 +24,50 @@
                 <a class="am" href=""><li>cadastro</li></a>
             </ul >
         </nav>        
+    </header>       
     </header>
-    <main>
-        oi
+    <main class="despesas" >
+        <section>
+            <form>
+                <div class="data">
+                    <legend>data</legend>
+                    <input type="date"  id="data" placeholder="data">
+                </div>
+                <div class="categoria" id="teste">
+                    <legend>categoria</legend>
+                    <select id="categoria">
+                            <option value="" selected disabled>qual a fonte</option>
+                            <option value="emprestimo">emprestimo</option>
+                            <option value="salario">salario</option>
+                            <option value="familia">familia</option>
+                            <option value="outros">outros</option>
+                        
+                    </select>
+                </div>
+                
+            </form>
+            
+            <form>
+                <div class="conjunto">
+                    <legend>descrição</legend>
+                    <input type="text" name="descricaoo" id="descricao">
+                </div> 
+                
+                <div class="valor">
+                    <legend>valor</legend>
+                    <input type="number"  id="valor" placeholder=" R$:">
+                    
+                </div>
+            </form>
+            <button  id="botao" onclick="addReceitas()" >salvar</button>
+
+        </section>
     </main>
     <footer>
         <p>Oroboros 2021</p>
     </footer>
-    <script src="/STATIC/JS/script.js"></script>
+    <script   src="/STATIC/JS/DB.js"></script>
+    <script   src="/STATIC/JS/ultils.js"></script>
+    <script  src="/STATIC/JS/script.js"></script>
 </body>
 </html>

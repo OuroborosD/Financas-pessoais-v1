@@ -35,7 +35,7 @@ function  indexDb(tipo,bancoDeDados = true){
 
 
 
-function cadastrarDb(d,tipo){
+function cadastrarDb(d,tipo = '',temIndex = 0){
       /* recebe dois paramentros, o d(OBjeto)com os dados, que vai entrar para o db, e o tipo(despesa,emprestimo, etc).
        para trocar a sigla da chave. assim, tendo uma diferente  para cada um. 
 
@@ -49,8 +49,12 @@ function cadastrarDb(d,tipo){
     
     */
 
-    index = indexDb(tipo)// chama a função para pegar o index.
-    localStorage.setItem(`${index}-${tipo}`, JSON.stringify(d))  
+    if(temIndex == 0){
+        index = indexDb(tipo)// chama a função para pegar o index.
+        localStorage.setItem(`${index}-${tipo}`, JSON.stringify(d))
+    }else{
+        localStorage.setItem(`receitas`, JSON.stringify(d))
+    }  
   
    
 }

@@ -29,6 +29,14 @@ class Emprestimo{
         this.dataReceber = dataReceber;
         this.valor = valor;
     }}
+class Receitas{
+    constructor(data,categoria,descricao,valor){
+        this.data = data;
+        this.descricao = descricao;
+        this.categoria = categoria;
+        this.valor = valor;
+    }
+}
 
 function addDespesa(){
     tipo = tipo[1]
@@ -96,6 +104,17 @@ function filtro(){
     //
     gerarTabelaV2(tipo[filtro]);
     }    
+}
+
+function addReceitas(){
+    let data = document.getElementById('data').value
+    let categoria = document.getElementById('categoria')
+    let categoriaRes = categoria.options[categoria.selectedIndex].value
+    let descricao = document.getElementById('descricao').value
+    let valor = document.getElementById('valor').value
+    let receitas = new Receitas(data,categoriaRes,descricao,valor)
+    cadastrarDb(receitas,0,1)
+
 }
 
 

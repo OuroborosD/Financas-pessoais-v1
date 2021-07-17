@@ -1,6 +1,6 @@
 .despesas{
-    width: 90%;
-    margin: 5% auto;
+    width: 80%;
+    margin: 5% 0px;
     display: flex;
     flex-direction: column;
 }

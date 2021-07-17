@@ -349,9 +349,10 @@ function listarV3(tipo){
         for(let i = 0; i < index ; i++){
             if(aux2[i] != null || aux2[i] != undefined){
                 listaProvisoria.push(aux2[i])
-            }
-         
-            }
+            }}
+        aux1 = localStorage.getItem('receitas')
+        aux2 = JSON.parse(aux1)
+        listaProvisoria.push(aux2)
         console.log(`------------------------ ${JSON.stringify(listaProvisoria)}`)
         listaordenada = ordenarv2(listaProvisoria)
        
@@ -467,6 +468,9 @@ function gerarTabelaV2(tipo){
             
             linha.insertCell(4).innerHTML = nullUndefined(formatarData(dado.dataReceber))
             linha.insertCell(5).innerHTML = nullUndefined(dado.valor)
+            if(dado.nome == undefined){
+                linha.setAttribute('class','receitas')
+            }
         }
         
 
