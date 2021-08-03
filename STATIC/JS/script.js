@@ -1,14 +1,14 @@
 
 
 
-let tipo = ['todos','despesa','emprestimo']
+let tipo = ['todos','despesa','emprestimo','receita']
 
 function botaoclick(){
     document.getElementById("botao").style.border = "3px solid #FFD700";
 }
 
 
-
+//TODO criar um classe geral, e suas filhas
 
 class Despeas{
     constructor(nome,categoria,descricao,data,meio1,valor){
@@ -30,10 +30,10 @@ class Emprestimo{
         this.valor = valor;
     }}
 class Receitas{
-    constructor(data,categoria,descricao,valor){
+    constructor(data,nome,descricao,valor){
         this.data = data;
         this.descricao = descricao;
-        this.categoria = categoria;
+        this.nome = nome;
         this.valor = valor;
     }
 }
@@ -70,6 +70,7 @@ function addEmprestimo(){
     //location.reload()
 }
 
+//TODO pode editar a despesa
 function lista(){
      //vai apagar as linhas até dar erro, depois disso vai execultar as coisas da função
      try{
@@ -107,16 +108,22 @@ function filtro(){
 }
 
 function addReceitas(){
+    tipo = tipo[3]
     let data = document.getElementById('data').value
-    let categoria = document.getElementById('categoria')
-    let categoriaRes = categoria.options[categoria.selectedIndex].value
+    let nome = document.getElementById('nome').value
     let descricao = document.getElementById('descricao').value
     let valor = document.getElementById('valor').value
-    let receitas = new Receitas(data,categoriaRes,descricao,valor)
-    cadastrarDb(receitas,0,1)
+    let receitas = new Receitas(data,nome,descricao,valor)
+    cadastrarDb(receitas,tipo)
 
 }
 
+function  valores(){
+    let receitas = document.getElementsByClassName('receitas')[0]
+    let receitasObj = localStorage.getItem('receitas')
+    receitasObj = JSON.parse(receitasObj)
+    receitas.innerHTML =  receitasObj.valor
+}
 
 
 

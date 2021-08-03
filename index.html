@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="STATIC/CSS/despesas.css">
     <title>Pigo</title>
 </head>
-<body>
+<body onload="valores()">
     <header class="menu">
         <a class="moldura" href='index.html'><img src="STATIC\IMG\newpigo.png" height="100px"></a>
         <nav class="menu-nomes">
@@ -25,18 +25,18 @@
             </ul >
         </nav>        
     </header>
-    <main class="index">
+    <main class="index" >
         <div>
-            <span class="receitas">receitas: </span>
-            <span>R$ 1000</span>
+            <p>receitas: R$: <span class="receitas"></span></p>
+            
         </div>
         <div>
-            <span class="contas">contas: </span>
-            <span>R$ 1000</span>
+          <p>contas: R$: <span class="conta"></span></p>
+         
         </div>
         <div>
-            <span class="balanco">balanço: </span>
-            <span>R$ 0</span>
+            <p>balanço: R$: <span class="balanco"></span></p>
+            
         </div>
        <button>lista completa.</button>
     </main>

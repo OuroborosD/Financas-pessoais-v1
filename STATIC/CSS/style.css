@@ -65,6 +65,19 @@ footer{
     justify-content: center;
 }
 
+
+
+.emprestimo{
+    color: #f7ec233d;
+}
+.despesa{
+    color: #f7234d2c;
+}
+
+.receitas{
+    color: rgba(91, 209, 91, 0.671);
+}
+
 @media (max-width: 1100px){
     .am, p,button, span{
         font-size: 19px ;

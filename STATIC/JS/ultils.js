@@ -1,5 +1,6 @@
 
 function limparTabela(){
+    'Limpa a tabela, quando troca de  filtro, apagando a primeira linha, até não ter mais nada, e entrar no erro'
     try{
         while(true){
              let corpoTabela = document.getElementById("listaCoisas").deleteRow(0)
@@ -13,7 +14,7 @@ function limparTabela(){
 
 function nullUndefined(parametro){
     if(parametro == null ||  parametro == undefined){
-        return '-'.repeat(5)
+        return '-'.repeat(14)
     }else{
         return parametro
     }
@@ -187,7 +188,7 @@ function tipoPagamento(valor,categoria = 1) {
 
 //FINISHED gerar lista despesas e emprestimos
 //FINISHED gerar lista com todos de uma vez.
-//TODO Organizar por data
+//FINISHED Organizar por data
 
 function listar(tipo){
     /*Description:pegar os dados no LOCALSTORAGE, e atraves deles gerar as listas.
@@ -333,6 +334,7 @@ function listarV3(tipo){
         let aux1 = []
         let aux2 = []
         let index = 0
+        let aux3 = []
         //chamei a função nela mesma, para gerar os dois tipos
         index = indexDb('emprestimo',false)
         aux1 = listarV3('emprestimo')
@@ -343,17 +345,20 @@ function listarV3(tipo){
             }}
          
     
-        index = indexDb('emprestimo',false)  
+        index = indexDb('despesa',false)  
         aux2 = listarV3('despesa')
         console.log(`------------------------ ${aux2}`)
-        for(let i = 0; i < index ; i++){
+        for(let i = 0; i <= index ; i++){
             if(aux2[i] != null || aux2[i] != undefined){
                 listaProvisoria.push(aux2[i])
             }}
-        aux1 = localStorage.getItem('receitas')
-        aux2 = JSON.parse(aux1)
-        listaProvisoria.push(aux2)
-        console.log(`------------------------ ${JSON.stringify(listaProvisoria)}`)
+        index =  indexDb('receita',false)
+        aux3 = listarV3('receita')
+        console.log(aux3)
+        for(let i = 0; i <= index ; i++){
+            if(aux3[i] != null || aux3[i] != undefined){
+                listaProvisoria.push(aux3[i])
+            }}
         listaordenada = ordenarv2(listaProvisoria)
        
     }else{
@@ -467,15 +472,16 @@ function gerarTabelaV2(tipo){
             }
             
             linha.insertCell(4).innerHTML = nullUndefined(formatarData(dado.dataReceber))
-            linha.insertCell(5).innerHTML = nullUndefined(dado.valor)
-            if(dado.nome == undefined){
+            linha.insertCell(5).innerHTML ='R$: '+ nullUndefined(dado.valor)
+            if(dado.meioPagamentoRes == undefined){
                 linha.setAttribute('class','receitas')
-            }
-        }
-        
+            }}
+        }}
+
+//TODO mascara para formatar o valor
+    function maskaraReal(valor){
 
     }
-}
 
 
 
